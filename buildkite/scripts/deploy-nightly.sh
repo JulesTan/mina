@@ -10,6 +10,10 @@ source DOCKER_DEPLOY_ENV
 DAEMON_TAG="gcr.io/o1labs-192920/coda-daemon:${CODA_VERSION}-${CODA_GIT_HASH}"
 ARCHIVE_TAG="gcr.io/o1labs-192920/coda-archive:${CODA_VERSION}-${CODA_GIT_HASH}"
 
+echo "Nightly ENV: $NIGHTLY"
+echo "DAEMON_TAG: $DAEMON_TAG"
+echo "ARCHIVE_TAG: $ARCHIVE_TAG"
+
 if [ ! -z $NIGHTLY ]; then
   echo "Deploying Nightly"
 
