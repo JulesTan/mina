@@ -26,7 +26,8 @@ in
                 "BUILDKITE_GS_APPLICATION_CREDENTIALS_JSON",
                 "AWS_ACCESS_KEY_ID",
                 "AWS_SECRET_ACCESS_KEY",
-                "NIGHTLY"
+                "NIGHTLY",
+                "KUBECONFIG=/shared/config/.kube"
               ]
             }
             "./buildkite/scripts/deploy-nightly.sh"
