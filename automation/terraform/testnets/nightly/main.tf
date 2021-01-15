@@ -69,7 +69,7 @@ module "ci_testnet" {
   providers = { google = google.google-us-east4 }
   source    = "../../modules/kubernetes/testnet"
 
-  k8s_context = "gke_o1labs-192920_us-east4_coda-infra-east4"
+  k8s_context = "gke_o1labs-192920_us-east1_buildkite-infra-east1"
 
   cluster_name          = "coda-infra-east4"
   cluster_region        = "us-east4"
