@@ -19,18 +19,9 @@ in
               "buildkite-agent artifact download --build \\\$BUILDKITE_BUILD_ID --include-retried-jobs --step _${minaArtifactDockerEnvStep.name}-${minaArtifactDockerEnvStep.key} DOCKER_DEPLOY_ENV .; " ++
             "fi"
           ),
-          Cmd.runInDocker
-            Cmd.Docker::{
-              image = (../Constants/ContainerImages.dhall).codaToolchain,
-              extraEnv = [
-                "BUILDKITE_GS_APPLICATION_CREDENTIALS_JSON",
-                "AWS_ACCESS_KEY_ID",
-                "AWS_SECRET_ACCESS_KEY",
-                "NIGHTLY",
-                "KUBECONFIG=/shared/config/.kube"
-              ]
-            }
+          Cmd.run (
             "./buildkite/scripts/deploy-nightly.sh"
+          )
         ],
         label = "Deploy nightly",
         key = "deploy-nightly",
